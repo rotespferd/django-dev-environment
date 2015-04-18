@@ -1,9 +1,9 @@
 # Big thanks to https://github.com/internavenue/docker-centos-nginx
 DOCKER_USER=rotespferd
-DOCKER_REPO_NAME=centos-nginx-hhvm
+DOCKER_REPO_NAME=python-dev
 
 # Change this to suit your needs.
-CONTAINER_NAME:=nginx-hhvm
+CONTAINER_NAME:=python-dev
 DATA_DIR:=/home/core/share/source/test/www
 CONF_DIR:=/home/core/share/source/test/conf
 PORT:=80
