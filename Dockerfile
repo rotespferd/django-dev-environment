@@ -15,16 +15,16 @@ RUN wget http://www.python.org/ftp/python/3.4.3/Python-3.4.3.tar.xz
 RUN xz -d Python-3.4.3.tar.xz && tar -xvf Python-3.4.3.tar
 
 RUN cd Python-3.4.3 && ./configure --prefix=/usr/local && make && make altinstall
-RUN export PATH="/usr/local/bin:$PATH" && echo alias python='python3.4' >> /root/.bashrc && echo alias pip='pip3.4' >> /root/.bashrc
+# RUN export PATH="/usr/local/bin:$PATH" && echo alias python='python3.4' >> /root/.bashrc && echo alias pip='pip3.4' >> /root/.bashrc
+RUN mv /usr/bin/python /usr/bin/python2 && ln /usr/local/bin/python3.4 /usr/bin/python && ln /usr/local/bin/pip3.4 /usr/bin/pip
 
 # install virtualenv
 RUN source /root/.bashrc
-RUN pip3.4 install virtualenv
+RUN pip install virtualenv
 
 # install virtualenvwrapper
-
-#RUN pip install virtualenvwrapper && \
-#export WORKON_HOME=~/Envs && \
-#mkdir -p $WORKON_HOME && \
-#source /usr/local/bin/virtualenvwrapper.sh && \
-#mkvirtualenv env1
+RUN pip install virtualenvwrapper && \
+export WORKON_HOME=~/Envs && \
+mkdir -p $WORKON_HOME && \
+source /usr/local/bin/virtualenvwrapper.sh && \
+mkvirtualenv env1

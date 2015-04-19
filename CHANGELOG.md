@@ -5,6 +5,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased][unreleased]
 ### Added
 - Install virtualenv.
+- Install virtualenvwrapper.
+### Changed
+- Move old python-bin away and link new python3.4.3
+### Removed
+- Remove adding of python3.4.3 to local PATH.
 
 ## [0.1.0] - 2015-04-19
 ### Added
