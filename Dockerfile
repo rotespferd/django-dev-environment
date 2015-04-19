@@ -14,6 +14,9 @@ RUN wget http://www.python.org/ftp/python/3.4.3/Python-3.4.3.tar.xz
 
 RUN xz -d Python-3.4.3.tar.xz && tar -xvf Python-3.4.3.tar
 
+RUN cd Python-3.4.3 && ./configure --prefix=/usr/local && make && make altinstall
+RUN export PATH="/usr/local/bin:$PATH" && echo alias python='python3.4' >> /root/.bashrc
+
 # install virtualenvwrapper
 
 #RUN pip install virtualenvwrapper && \
