@@ -17,6 +17,10 @@ RUN xz -d Python-3.4.3.tar.xz && tar -xvf Python-3.4.3.tar
 RUN cd Python-3.4.3 && ./configure --prefix=/usr/local && make && make altinstall
 RUN export PATH="/usr/local/bin:$PATH" && echo alias python='python3.4' >> /root/.bashrc && echo alias pip='pip3.4' >> /root/.bashrc
 
+# install virtualenv
+RUN source /root/.bashrc
+RUN pip3.4 install virtualenv
+
 # install virtualenvwrapper
 
 #RUN pip install virtualenvwrapper && \
