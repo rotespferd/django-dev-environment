@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Install virtualenv.
 - Install virtualenvwrapper.
+- Install Django.
 ### Changed
 - Move old python-bin away and link new python3.4.3
 ### Removed
