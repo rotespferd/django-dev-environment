@@ -9,3 +9,4 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - CentOS base-images to Dockerfile.
 - Build-steps for python.
 - Build and install python.
+- Install pip.
