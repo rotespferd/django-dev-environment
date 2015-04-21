@@ -9,8 +9,11 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Removed
 - Remove virtualenv.
 - Remove virtualenvwrapper.
+- CONF_DIR from Makefile.
 ### Changed
 - Install Django with pip.
+- Port-binding in Makefile.
+- Location of linked folders in Makefile.
 
 ## [0.2.0] - 2015-04-19
 ### Added
