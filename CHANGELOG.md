@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Command for running Django.
 - Workdir for Django-app.
+- CircleCI integration.
 ### Removed
 - Remove virtualenv.
 - Remove virtualenvwrapper.
