@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased][unreleased]
+### Added
+- Command for running Django.
+- Workdir for Django-app.
+### Removed
+- Remove virtualenv.
+- Remove virtualenvwrapper.
+### Changed
+- Install Django with pip.
 
 ## [0.2.0] - 2015-04-19
 ### Added
