@@ -4,13 +4,12 @@ DOCKER_REPO_NAME=python-dev
 
 # Change this to suit your needs.
 CONTAINER_NAME:=python-dev
-DATA_DIR:=/home/core/share/source/test/www
-CONF_DIR:=/home/core/share/source/test/conf
-PORT:=80
+DATA_DIR:=/home/core/share/source/webfrontend
+PORT:=8000
 
 RUNNING:=$(shell docker ps | grep $(CONTAINER_NAME) | cut -f 1 -d ' ')
 ALL:=$(shell docker ps -a | grep $(CONTAINER_NAME) | cut -f 1 -d ' ')
-DOCKER_RUN_COMMON=--name="$(CONTAINER_NAME)" -p $(PORT):80 -v $(DATA_DIR):/var/www -v $(CONF_DIR):/etc/nginx/conf.d $(DOCKER_USER)/$(DOCKER_REPO_NAME)
+DOCKER_RUN_COMMON=--name="$(CONTAINER_NAME)" -p 0.0.0.0:$(PORT):8000 -v $(DATA_DIR):/srv/src/app $(DOCKER_USER)/$(DOCKER_REPO_NAME)
 
 all: build
 
