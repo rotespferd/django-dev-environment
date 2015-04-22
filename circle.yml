@@ -1,15 +1,21 @@
 machine:
   services:
     - docker
+  python:
+    version: 3.4.2
 
 dependencies:
+  pre:
+    - pip install Django
   override:
     - docker info
     - docker build -t containerpier/django-dev-environment .
+    - pip install Django
 
 test:
   override:
-    - docker run -d -p 8000:8000 containerpier/django-dev-environment; sleep 10
+    - cd ~ && django-admin startproject mysite
+    - docker run -d -p 8000:8000 -v ~/mysite:/srv/src/app containerpier/django-dev-environment; sleep 10
     - curl --retry 10 --retry-delay 5 -v http://localhost:8000
 
 deployment:
