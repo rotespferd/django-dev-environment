@@ -3,6 +3,12 @@ FROM debian:8.0
 MAINTAINER Marian Sievers
 
 # update the system
+RUN apt-get update
+
+# install python 3
+RUN apt-get install -y python3
+
+# update the system
 #RUN yum -y update && yum clean all
 
 # install utilitis
