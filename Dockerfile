@@ -5,22 +5,15 @@ MAINTAINER Marian Sievers
 # update the system
 RUN apt-get update
 
+# install some tools
+RUN apt-get install -y wget
+
 # install python 3
 RUN apt-get install -y python3
 
-# update the system
-#RUN yum -y update && yum clean all
+# install pip
+RUN wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py
 
-# install utilitis
-#RUN yum groupinstall -y development || true && yum clean all
-#RUN yum install -y wget source zlib-dev openssl openssl-devel sqlite-devel bzip2-devel xz-libs || true && yum clean all
-
-# install python 3.4.3
-#RUN wget http://www.python.org/ftp/python/3.4.3/Python-3.4.3.tar.xz
-
-#RUN xz -d Python-3.4.3.tar.xz && tar -xvf Python-3.4.3.tar
-
-#RUN cd Python-3.4.3 && ./configure --prefix=/usr/local && make && make altinstall
 #RUN mv /usr/bin/python /usr/bin/python2 && ln /usr/local/bin/python3.4 /usr/bin/python && ln /usr/local/bin/pip3.4 /usr/bin/pip
 
 #RUN pip install Django

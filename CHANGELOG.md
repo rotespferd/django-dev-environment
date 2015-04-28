@@ -7,6 +7,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Install python3 from repository.
 ### Changed
 - Switch OS to Debian 8.
+- Install pip with script from bootstrap.pypa.io.
 ### Removed
 - Compilation of python.
 
