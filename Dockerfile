@@ -10,13 +10,13 @@ RUN apt-get install -y wget
 
 # install python 3
 RUN apt-get install -y python3
+RUN ln /usr/bin/python3.4 /usr/bin/python
 
 # install pip
 RUN wget https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py
 
-#RUN mv /usr/bin/python /usr/bin/python2 && ln /usr/local/bin/python3.4 /usr/bin/python && ln /usr/local/bin/pip3.4 /usr/bin/pip
-
-#RUN pip install Django
+# install Django
+RUN pip install Django
 
 # run application
 
